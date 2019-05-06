@@ -1,0 +1,5 @@
+URL: https://dragonage.fandom.com/wiki/Companions_(Origins)
+
+1. Get basics up and running--"fake code"
+2. Set up scraper file
+3. How to go another level deep--gender, class, romanceable? Maybe brief description
