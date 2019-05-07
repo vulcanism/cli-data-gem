@@ -3,3 +3,11 @@ URL: https://dragonage.fandom.com/wiki/Companions_(Origins)
 1. Get basics up and running--"fake code"
 2. Set up scraper file
 3. How to go another level deep--gender, class, romanceable? Maybe brief description
+
+What does a character in this context have?
+-Name
+-Gender
+-Class
+-Race
+
+Function to view random line of dialogue from selected character
