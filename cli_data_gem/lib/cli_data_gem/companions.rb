@@ -1,0 +1,1 @@
+# Class to create companion objects, which the cli will iterate through
