@@ -9,5 +9,10 @@ What does a character in this context have?
 -Gender
 -Class
 -Race
+-Voice?
 
 Function to view random line of dialogue from selected character
+^ This might not work, since the entire dialogue page is made up of <li> traits. That is a
+LOT of data. Instead, maybe which quests they're involved in, or who voices them. For
+quest, maybe give the brief summary at the top. <p> tag, but could be easy to just tell code
+"grab only the first <p> tag on the page"
