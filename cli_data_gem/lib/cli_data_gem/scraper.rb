@@ -8,6 +8,8 @@ class CliDataGem::Scraper
 
     # Gets character name
     def self.scrape_name
+        doc = Nokogiri::HTML(open(PAGE_URL))
+        binding.pry
 
     end
 
