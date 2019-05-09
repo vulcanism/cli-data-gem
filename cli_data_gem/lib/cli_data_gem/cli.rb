@@ -1,10 +1,14 @@
 class CliDataGem::CLI
   
   def start
+    welcome
     list
-    options
-    goodbye
+    options    
   end
+
+  def welcome
+    puts "This is my welcome message!"
+  end  
 
   def list
     puts "Available Companions:"
@@ -26,11 +30,6 @@ class CliDataGem::CLI
         puts "Not a valid entry, please try again"
       end
     end     
-  end
-
-  # Exits program, tells user goodbye
-  def goodbye
-    puts "Exiting"
-  end
+  end  
   
 end

@@ -3,4 +3,6 @@
 class Companions
     attr_accessor :name, :race, :role, :voice
 
+    @@all = []
+
 end
