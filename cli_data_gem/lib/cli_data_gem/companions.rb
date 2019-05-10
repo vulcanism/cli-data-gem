@@ -1,15 +1,19 @@
 # Class to create companion objects
 
-class Companions
-    attr_accessor :name, :location, :race, :role, :voice
+class CliDataGem::Companions
+    attr_accessor :name, :location, :details
 
     @@all = []
 
-    def initialize(companions_hash)
-        companions_hash.each do |key, value|
-            self.send(("#{key}="), value)
-        end
-        @@all << self        
-    end    
+    def initialize
+        @name = name
+        @location = location
+        @details = details       
+    end
+    
+    def save
+        @@all << self
+    end
+
 
 end
