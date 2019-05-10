@@ -5,15 +5,12 @@ class CliDataGem::Companions
 
     @@all = []
 
-    def initialize
-        @name = name
-        @location = location
-        @details = details       
-    end
-    
-    def save
+    def initialize(companions_hash)
+        companions_hash.each do |key, value|
+            self.send(("#{key}="), value)
+        end
         @@all << self
-    end
-
+    end   
+    
 
 end

@@ -20,17 +20,24 @@ class CliDataGem::CLI
   def options
     input = ""
     while input != "exit"
-      puts "Which character would you like to know more about? Or type 'list' to see the list again"
+      puts "Please type the number of the character you'd like to know more about. You may also type 'list'
+      to view the available companions again, or 'exit' to leave the program."      
       input = gets.strip.downcase
       case input
       when "1"
         puts "More info on 1..."
       when "list"
         list
+      when "exit"
+        goodbye
       else
-        puts "Not a valid entry, please try again"
+        puts "Not a valid entry, please try again."
       end
     end     
+  end
+  
+  def goodbye
+    puts "Exiting program, goodbye!"
   end  
   
 end
