@@ -2,7 +2,7 @@ URL: https://dragonage.fandom.com/wiki/Companions_(Origins)
 
 1. Get basics up and running--"fake code"
 2. Set up scraper file
-3. How to go another level deep--gender, class, romanceable? Maybe brief description
+3. Interface
 
 What does a character in this context have?
 -Name
@@ -11,8 +11,4 @@ What does a character in this context have?
 -Race
 -Voice?
 
-Function to view random line of dialogue from selected character
-^ This might not work, since the entire dialogue page is made up of <li> traits. That is a
-LOT of data. Instead, maybe which quests they're involved in, or who voices them. For
-quest, maybe give the brief summary at the top. <p> tag, but could be easy to just tell code
-"grab only the first <p> tag on the page"
+Details function gets first <p> tag from given character's page; basically just a brief description

@@ -8,12 +8,12 @@ class CliDataGem::CLI
 
   def welcome
     puts "This is my welcome message!"
-    Scraper.scrape_name        
+    Scraper.scrape_info        
   end  
 
+  # Lists names and locations of game companions
   def list
-    puts "Available Companions:"
-    # Lists companion names (and locations?)  
+    puts "Available Companions:"      
   end
   
   # Asks which character user would like more info on, or if they'd like to exit
