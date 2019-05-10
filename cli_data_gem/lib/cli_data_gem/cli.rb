@@ -1,13 +1,14 @@
 class CliDataGem::CLI
   
-  def start
-    welcome
+  def start    
+    welcome        
     list
     options    
   end
 
   def welcome
     puts "This is my welcome message!"
+    Scraper.scrape_name    
   end  
 
   def list
