@@ -9,8 +9,7 @@ class CliDataGem::CLI
 
   # Make this pretty and nice
   def welcome
-    puts "This is my welcome message!"
-    Scraper.scrape_details(2)                    
+    puts "This is my welcome message!"                        
   end
   
   # Creates Companions objects from scraped info

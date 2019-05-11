@@ -38,11 +38,17 @@ class Scraper
         details_hash = {}
         character = CliDataGem::Companions.all[index - 1]
         doc = Nokogiri::HTML(open("https://dragonage.fandom.com/wiki/#{character}"))
+        details_hash = {
+            :quote => doc.css("div.quote").text
+            :race => doc.css("div.pi-data-value")[0].text
+            :gender => doc.css("div.pi-data-value")[1].text
+            :role => doc.css("div.pi-data-value")[2].text
+        }
         # quote = doc.css("div.quote").text
         # race = doc.css("div.pi-data-value")[0].text
         # gender = doc.css("div.pi-data-value")[1].text
         # role = doc.css("div.pi-data-value")[2].text
-        binding.pry
+        
         # def self.scrape_details(index)
         # index should be -1 beforre we get here user says 1 we want 0 
         # companion = compainions_obj_array[index]
