@@ -1,7 +1,7 @@
 # Class to create companion objects
 
 class CliDataGem::Companions
-    attr_accessor :name, :location, :details
+    attr_accessor :name, :location, :quote, :race, :gender, :role
 
     @@all = []
 
