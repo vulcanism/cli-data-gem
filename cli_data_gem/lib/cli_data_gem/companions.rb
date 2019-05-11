@@ -10,7 +10,17 @@ class CliDataGem::Companions
             self.send(("#{key}="), value)
         end
         @@all << self
-    end   
+    end
     
+    def self.create_from_collection(companions_array)
+        companions_array.each do |companion|
+            self.new(companion)
+        end                
+    end
+
+    def self.all
+        @@all
+    end    
+        
 
 end

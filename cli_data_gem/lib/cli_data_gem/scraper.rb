@@ -15,18 +15,17 @@ class Scraper
         companions = []             
            
         doc.css("table.sortable").each do |companion|           
-            companion.css("tr").each_with_index do |x, index|                      
+            companion.css("tr").each_with_index do |row, index|                      
              if index > 0
               companions_hash = {
-              :name => x.css("a").first.text,
-              :location => x.css("td")[1].text.gsub("\n",""),
+              :name => row.css("a").first.text,
+              :location => row.css("td")[1].text.gsub("\n",""),
               # :details => scrape for details here
               }
               companions << companions_hash                                     
              end                
             end
-        end
-    binding.pry
+        end    
         companions 
     end
 
@@ -40,8 +39,7 @@ class Scraper
         # Scraper.get_details(input)
 
 
-        # companion = 
-        # Somehow open https://dragonage.fandom.com/wiki/#{index}
+        # companion =         
         # base_path = "https://dragonage.fandom.com/wiki/"
 
 

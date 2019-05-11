@@ -2,32 +2,40 @@ class CliDataGem::CLI
   
   def start    
     welcome        
-    list
+    create_list
+    show_companions
     options    
-  end
-
-  def welcome
-    puts "This is my welcome message!"
-    Scraper.scrape_info        
   end  
 
   # Lists names and locations of game companions
-  def list
-    puts "Available Companions:"      
+  def welcome
+    puts "This is my welcome message!"                    
   end
   
+  def create_list    
+    companions_array = Scraper.scrape_info
+    CliDataGem::Companions.create_from_collection(companions_array)           
+  end  
+
+  def show_companions
+    puts "Available companions:"
+    CliDataGem::Companions.all.each_with_index do |companion, index|
+      puts "#{index + 1}. #{companion.name}"
+    end
+  end
+    
   # Asks which character user would like more info on, or if they'd like to exit
   def options
     input = ""
     while input != "exit"
-      puts "Please type the number of the character you'd like to know more about. You may also type 'list'
+      puts "Please enter the number of the character you'd like to know more about. You may also type 'list'
       to view the available companions again, or 'exit' to leave the program."      
       input = gets.strip.downcase
       case input
       when "1"
         puts "More info on 1..."
       when "list"
-        list
+        show_companions
       when "exit"
         goodbye
       else
