@@ -6,6 +6,7 @@ require 'pry'
 class Scraper
 
     PAGE_URL = "https://dragonage.fandom.com/wiki/Companions_and_advisors_(Inquisition)"
+    BASE_URL = "https://dragonage.fandom.com/wiki/"
 
     # Gets character name and location
     def self.scrape_info
@@ -30,7 +31,7 @@ class Scraper
     end
 
     # Gets character details
-    def self.scrape_details(index)        
+    def self.scrape_details(name)        
         # def self.scrape_details(index)
         # index should be -1 beforre we get here user says 1 we want 0 
         # companion = compainions_obj_array[index]
