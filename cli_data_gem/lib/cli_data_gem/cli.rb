@@ -34,8 +34,7 @@ class CliDataGem::CLI
       input = gets.strip.downcase
       
       if input.to_i > 0
-        # Need to put companion.name[input.to_i - 1]
-        puts "placeholder"      
+        puts "Location in game: #{CliDataGem::Companions.all[input.to_i - 1].location}"     
       elsif input == "list"
         show_companions
       elsif input == "exit"
@@ -46,7 +45,7 @@ class CliDataGem::CLI
         options
       end
     end    
-  end
+  end  
   
   def goodbye
     puts "Exiting program, goodbye!"
