@@ -20,6 +20,10 @@ class CliDataGem::CLI
   
   # Adds detailed information from scraped info
   def add_details
+    CliDataGem::Companions.all.each_with_index do |companion, index|
+      details = Scraper.scrape_details(index)
+      companion.add_details(details)    
+    end    
 
   end
 
@@ -41,7 +45,8 @@ class CliDataGem::CLI
       
       if input.to_i > 0
         puts "Location in game: #{CliDataGem::Companions.all[input.to_i - 1].location}"
-        puts "\n"     
+        puts "\n"
+
       elsif input == "list"
         show_companions
       elsif input == "exit"
