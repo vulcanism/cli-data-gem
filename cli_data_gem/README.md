@@ -1,10 +1,6 @@
 # CliDataGem
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cli_data_gem`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
-T E S T I N G
+Welcome to my Ruby gem! This program uses Nokogiri to scrape HTML/CSS data from the Dragon Age Fandom Wikia site, and then displays all available companions from the game Dragon Age: Inquisition. From there, users may request more details on each character. I created this for the CLI Data Gem Project as part of the Flatiron Software Engineering track.
 
 ## Installation
 

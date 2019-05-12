@@ -46,11 +46,11 @@ class CliDataGem::CLI
       if input.to_i > 0
         puts "Location in game: #{CliDataGem::Companions.all[input.to_i - 1].location}"
         puts "\n"
-         # details_test = Scraper.scrape_details(input.to_i)
-          CliDataGem::Companions.all.each do |companion|
-          details = Scraper.scrape_details(input.to_i)
-          companion.add_details_to_companions(details)    
-          end  
+         details_test = Scraper.scrape_details(input.to_i)
+          # CliDataGem::Companions.all.each do |companion|
+          # details = Scraper.scrape_details(input.to_i)
+          # companion.add_details_to_companions(details)    
+          # end  
          ### CliDataGem::Companions.add_details_to_companions(details_test)         
          binding.pry     
              
