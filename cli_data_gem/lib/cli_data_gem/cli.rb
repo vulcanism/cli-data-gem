@@ -8,9 +8,9 @@ class CliDataGem::CLI
     options    
   end  
 
-  # Make this pretty and nice
+  # Welcomes user
   def welcome
-    puts "This is my welcome message!"                        
+    puts "Welcome to the Dragon Age: Inquisition companions Ruby gem!"                        
   end
   
   # Creates Companions objects from scraped info
@@ -42,17 +42,20 @@ class CliDataGem::CLI
       puts "Please enter the number of the character you'd like to know more about. You may also type
       'list' to view the available companions again, or 'exit' to leave the program."
       input = gets.strip.downcase
-      
+      companion = CliDataGem::Companions.all[input.to_i - 1]
       if input.to_i > 0
-        puts "Location in game: #{CliDataGem::Companions.all[input.to_i - 1].location}"
+        puts "Location: #{companion.location}"
         puts "\n"
-         details_test = Scraper.scrape_details(input.to_i)
-          # CliDataGem::Companions.all.each do |companion|
-          # details = Scraper.scrape_details(input.to_i)
-          # companion.add_details_to_companions(details)    
-          # end  
+        puts "Quote: #{companion.quote}"
+        
+          # details_test = Scraper.scrape_details(input.to_i, companion)
+          # puts "Quote: #{details_test.quote}"         
+           # CliDataGem::Companions.each do |companion|
+           # details = Scraper.scrape_details(input.to_i)
+           # companion.add_details_to_companions(details)    
+           # end  
          ### CliDataGem::Companions.add_details_to_companions(details_test)         
-         binding.pry     
+             
              
        
       elsif input == "list"
@@ -60,7 +63,7 @@ class CliDataGem::CLI
       elsif input == "exit"
          goodbye
       else
-        puts "Not a valid entry, please try again."
+        puts "Not a valid entry, please input a number, 'list,' or 'exit.'"
         puts "\n"
         options
       end
