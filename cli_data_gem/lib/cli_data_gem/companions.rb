@@ -3,7 +3,7 @@
 class CliDataGem::Companions
     attr_accessor :name, :location, :quote, :race, :gender, :role
 
-    @@all = []
+    @@all = []    
 
     def initialize(companions_hash)
         companions_hash.each do |key, value|
@@ -18,7 +18,7 @@ class CliDataGem::Companions
         end                
     end
 
-    def self.add_details(details_hash)
+    def self.add_details_to_companions(details_hash)
         details_hash.each do |key, value|
             self.send(("#{key}="), value)
         end

@@ -3,6 +3,7 @@ class CliDataGem::CLI
   def start    
     welcome        
     create_list
+    # add_details
     show_companions
     options    
   end  
@@ -19,13 +20,12 @@ class CliDataGem::CLI
   end
   
   # Adds detailed information from scraped info
-  def add_details
-    CliDataGem::Companions.all.each_with_index do |companion, index|
-      details = Scraper.scrape_details(index)
-      companion.add_details(details)    
-    end    
-
-  end
+  #  def add_details
+  #    CliDataGem::Companions.all.each_with_index do |companion, index|
+  #      details = Scraper.scrape_details(index)
+  #      companion.add_details_to_companions(details)    
+  #    end   
+  #  end
 
   def show_companions
     puts "Available companions:"
@@ -46,7 +46,15 @@ class CliDataGem::CLI
       if input.to_i > 0
         puts "Location in game: #{CliDataGem::Companions.all[input.to_i - 1].location}"
         puts "\n"
-
+         # details_test = Scraper.scrape_details(input.to_i)
+          CliDataGem::Companions.all.each do |companion|
+          details = Scraper.scrape_details(input.to_i)
+          companion.add_details_to_companions(details)    
+          end  
+         ### CliDataGem::Companions.add_details_to_companions(details_test)         
+         binding.pry     
+             
+       
       elsif input == "list"
         show_companions
       elsif input == "exit"

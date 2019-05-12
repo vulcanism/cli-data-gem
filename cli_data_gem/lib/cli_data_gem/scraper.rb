@@ -37,12 +37,12 @@ class Scraper
     def self.scrape_details(index)
         details_hash = {}
         character = CliDataGem::Companions.all[index - 1]
-        doc = Nokogiri::HTML(open("https://dragonage.fandom.com/wiki/#{character}"))
+        doc = Nokogiri::HTML(open("https://dragonage.fandom.com/wiki/#{character.name}"))
         details_hash = {
-            :quote => doc.css("div.quote").text
-            :race => doc.css("div.pi-data-value")[0].text
-            :gender => doc.css("div.pi-data-value")[1].text
-            :role => doc.css("div.pi-data-value")[2].text
+            :quote => doc.css("div.quote").text.gsub("\n",""),
+            :race => doc.css("div.pi-data-value")[0].text,
+            :gender => doc.css("div.pi-data-value")[1].text,
+            :role => doc.css("div.pi-data-value")[2].text,
         }
         # quote = doc.css("div.quote").text
         # race = doc.css("div.pi-data-value")[0].text
