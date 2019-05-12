@@ -16,14 +16,7 @@ class CliDataGem::Companions
         companions_array.each do |companion|
             self.new(companion)
         end                
-    end
-
-    def self.add_details_to_companions(details_hash)
-        details_hash.each do |key, value|
-            self.send(("#{key}="), value)
-        end
-        self
-    end    
+    end      
 
     def self.all
         @@all

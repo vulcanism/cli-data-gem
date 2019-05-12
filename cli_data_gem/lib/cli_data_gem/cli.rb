@@ -2,8 +2,7 @@ class CliDataGem::CLI
   
   def start    
     welcome        
-    create_list
-    # add_details
+    create_list    
     show_companions
     options    
   end  
@@ -17,15 +16,7 @@ class CliDataGem::CLI
   def create_list    
     companions_array = Scraper.scrape_info
     CliDataGem::Companions.create_from_collection(companions_array)           
-  end
-  
-  # Adds detailed information from scraped info
-  #  def add_details
-  #    CliDataGem::Companions.all.each_with_index do |companion, index|
-  #      details = Scraper.scrape_details(index)
-  #      companion.add_details_to_companions(details)    
-  #    end   
-  #  end
+  end   
 
   def show_companions
     puts "Available companions:"
@@ -35,8 +26,8 @@ class CliDataGem::CLI
   end
     
   # Asks which character user would like more info on, or if they'd like to exit
-  def options        
-            
+  def options
+
     input = nil
     while input != "exit"
       puts "Please enter the number of the character you'd like to know more about. You may also type
@@ -47,17 +38,13 @@ class CliDataGem::CLI
         puts "Location: #{companion.location}"
         puts "\n"
         puts "Quote: #{companion.quote}"
-        
-          # details_test = Scraper.scrape_details(input.to_i, companion)
-          # puts "Quote: #{details_test.quote}"         
-           # CliDataGem::Companions.each do |companion|
-           # details = Scraper.scrape_details(input.to_i)
-           # companion.add_details_to_companions(details)    
-           # end  
-         ### CliDataGem::Companions.add_details_to_companions(details_test)         
-             
-             
-       
+        puts "\n"
+        puts "Race: #{companion.race}"
+        puts "\n"
+        puts "Gender: #{companion.gender}"
+        puts "\n"
+        puts "Role: #{companion.role}"
+        puts "\n"   
       elsif input == "list"
         show_companions
       elsif input == "exit"
