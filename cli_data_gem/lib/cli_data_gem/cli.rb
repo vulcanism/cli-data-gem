@@ -30,8 +30,9 @@ class CliDataGem::CLI
 
     input = nil
     while input != "exit"
-      puts "Please enter the number of the character you'd like to know more about. You may also type
-      'list' to view the available companions again, or 'exit' to leave the program."
+      puts "Please enter the number of the character you'd like to know more about. Enter 'random' to
+      be given a random companion's information. You may also type 'list' to view the
+      available companions again, or 'exit' to leave the program."
       input = gets.strip.downcase
       companion = CliDataGem::Companions.all[input.to_i - 1]
       if input.to_i > 0
@@ -44,7 +45,21 @@ class CliDataGem::CLI
         puts "Gender: #{companion.gender}"
         puts "\n"
         puts "Role: #{companion.role}"
-        puts "\n"   
+        puts "\n"
+      elsif input == "random"
+        companion = CliDataGem::Companions.all[(rand(1..9))]
+        puts "Name: #{companion.name}"
+        puts "\n"
+        puts "Location: #{companion.location}"
+        puts "\n"
+        puts "Quote: #{companion.quote}"
+        puts "\n"
+        puts "Race: #{companion.race}"
+        puts "\n"
+        puts "Gender: #{companion.gender}"
+        puts "\n"
+        puts "Role: #{companion.role}"
+        puts "\n"
       elsif input == "list"
         show_companions
       elsif input == "exit"
