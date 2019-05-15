@@ -47,7 +47,7 @@ class CliDataGem::CLI
         puts "Role: #{companion.role}"
         puts "\n"
       elsif input == "random"
-        companion = CliDataGem::Companions.all[(rand(1..9))]
+        companion = CliDataGem::Companions.all[(rand(0..9))]
         puts "Name: #{companion.name}"
         puts "\n"
         puts "Location: #{companion.location}"
